@@ -1,0 +1,339 @@
+/* Gruter & Marchand LinkedIn Communication - Stylesheet */
+
+:root {
+    --gm-primary: #0a4d8c;
+    --gm-secondary: #e74c3c;
+    --gm-dark: #1a1a2e;
+    --gm-light: #f8f9fa;
+    --gm-gray: #6c757d;
+    --linkedin-blue: #0077b5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--gm-dark);
+    background: var(--gm-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--gm-primary) 0%, var(--gm-dark) 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 0 0 20px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header .tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+header .year-badge {
+    display: inline-block;
+    background: var(--gm-secondary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--gm-primary);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: var(--gm-primary);
+    color: white;
+}
+
+/* Sections */
+section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+section h2 {
+    color: var(--gm-primary);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--gm-secondary);
+}
+
+section h3 {
+    color: var(--gm-dark);
+    margin: 20px 0 10px;
+}
+
+/* LinkedIn Post Card */
+.post-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.post-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--gm-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.post-meta {
+    flex: 1;
+}
+
+.post-meta .company-name {
+    font-weight: bold;
+    color: var(--gm-dark);
+}
+
+.post-meta .post-date {
+    font-size: 0.85rem;
+    color: var(--gm-gray);
+}
+
+.post-type {
+    background: var(--linkedin-blue);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.post-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.post-content .hashtags {
+    color: var(--linkedin-blue);
+    margin-top: 15px;
+    display: block;
+}
+
+.post-image-placeholder {
+    background: linear-gradient(135deg, var(--gm-primary) 0%, var(--gm-dark) 100%);
+    height: 200px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.post-engagement {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    color: var(--gm-gray);
+    font-size: 0.9rem;
+}
+
+/* Calendar */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.calendar-week {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid var(--gm-primary);
+}
+
+.calendar-week h4 {
+    color: var(--gm-primary);
+    margin-bottom: 15px;
+}
+
+.calendar-post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+}
+
+.calendar-post .day {
+    font-weight: bold;
+    color: var(--gm-secondary);
+}
+
+.calendar-post .theme {
+    color: var(--gm-dark);
+    margin-top: 5px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: var(--gm-primary);
+    color: white;
+}
+
+tr:hover {
+    background: #f8f9fa;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--gm-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background: var(--gm-dark);
+    transform: translateY(-2px);
+}
+
+.btn-linkedin {
+    background: var(--linkedin-blue);
+}
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, var(--gm-primary) 0%, var(--gm-dark) 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.stat-card .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.stat-card .label {
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .post-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Print styles */
+@media print {
+    header {
+        background: var(--gm-primary) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .post-card {
+        break-inside: avoid;
+    }
+}

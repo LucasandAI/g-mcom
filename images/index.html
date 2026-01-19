@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visuels LinkedIn - Gruter & Marchand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0a1a;
+            color: white;
+            min-height: 100vh;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #0a4d8c 0%, #e74c3c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .instructions {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .instructions h3 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: rgba(231, 76, 60, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .card-preview {
+            width: 100%;
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-preview iframe {
+            width: 1080px;
+            height: 1080px;
+            border: none;
+            transform: scale(0.324);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-week {
+            display: inline-block;
+            background: #0a4d8c;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.6;
+        }
+
+        footer a {
+            color: #e74c3c;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #0a4d8c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <a href="../plan-communication.html" class="back-link">← Retour au plan de communication</a>
+
+    <header>
+        <h1>Visuels LinkedIn</h1>
+        <p class="subtitle">8 images prates a publier pour Gruter & Marchand</p>
+    </header>
+
+    <div class="instructions">
+        <h3>Comment utiliser ces visuels</h3>
+        <ol>
+            <li>Cliquez sur <strong>"Ouvrir"</strong> pour voir le visuel en taille reelle (1080x1080px)</li>
+            <li>Faites une capture d'ecran ou utilisez <code>Cmd+Shift+4</code> (Mac) / <code>Win+Shift+S</code> (Windows)</li>
+            <li>Ou cliquez droit → "Enregistrer sous" pour sauvegarder en HTML puis convertir en image</li>
+            <li>Alternative : Utilisez un outil comme <a href="https://www.screenshotmachine.com" target="_blank" style="color: #e74c3c;">Screenshot Machine</a> pour convertir en PNG</li>
+        </ol>
+    </div>
+
+    <div class="grid">
+        <!-- Post 1 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="01-heritage-70ans.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 1 - Mardi</span>
+                <h3 class="card-title">70 Ans d'Expertise</h3>
+                <p class="card-desc">Post heritage valorisant l'histoire et le savoir-faire de Gruter & Marchand depuis 1952.</p>
+                <div class="card-actions">
+                    <a href="01-heritage-70ans.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="02-hygrometrie-pharma.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 1 - Jeudi</span>
+                <h3 class="card-title">Hygrometrie Pharma</h3>
+                <p class="card-desc">Post technique sur l'importance de la mesure d'humidite dans l'industrie pharmaceutique.</p>
+                <div class="card-actions">
+                    <a href="02-hygrometrie-pharma.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="03-heidenhain-precision.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 2 - Mardi</span>
+                <h3 class="card-title">Partenariat HEIDENHAIN</h3>
+                <p class="card-desc">Mise en avant du partenariat avec HEIDENHAIN pour la mesure dimensionnelle de precision.</p>
+                <div class="card-actions">
+                    <a href="03-heidenhain-precision.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="04-hydrogene-vert.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 2 - Jeudi</span>
+                <h3 class="card-title">Hydrogene Vert</h3>
+                <p class="card-desc">Post tendance sur la transition energetique et les solutions de mesure pour l'hydrogene.</p>
+                <div class="card-actions">
+                    <a href="04-hydrogene-vert.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="05-aeronautique.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 3 - Mardi</span>
+                <h3 class="card-title">Aeronautique</h3>
+                <p class="card-desc">Focus sur les exigences de precision dans l'industrie aeronautique et defense.</p>
+                <div class="card-actions">
+                    <a href="05-aeronautique.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="06-equipe-experts.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 3 - Jeudi</span>
+                <h3 class="card-title">Notre Equipe</h3>
+                <p class="card-desc">Post institutionnel valorisant l'expertise humaine et la proximite client.</p>
+                <div class="card-actions">
+                    <a href="06-equipe-experts.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 7 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="07-packaging-permeabilite.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 4 - Mardi</span>
+                <h3 class="card-title">Permeabilite Packaging</h3>
+                <p class="card-desc">Post technique sur la mesure de permeabilite OTR/WVTR pour l'agroalimentaire.</p>
+                <div class="card-actions">
+                    <a href="07-packaging-permeabilite.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Post 8 -->
+        <div class="card">
+            <div class="card-preview">
+                <iframe src="08-cofrac-calibration.html"></iframe>
+            </div>
+            <div class="card-info">
+                <span class="card-week">Semaine 4 - Jeudi</span>
+                <h3 class="card-title">Calibration COFRAC</h3>
+                <p class="card-desc">Post services sur l'offre de calibration accreditee et la tracabilite.</p>
+                <div class="card-actions">
+                    <a href="08-cofrac-calibration.html" target="_blank" class="btn btn-primary">Ouvrir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Plan de Communication LinkedIn - <strong>Gruter & Marchand</strong></p>
+        <p><a href="https://gruter-et-marchand.com" target="_blank">www.gruter-et-marchand.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gruter & Marchand - 70 Ans d'Expertise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d1b4a 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Light blue triangle decoration (like logo) */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .triangle-1 {
+            border-width: 0 200px 350px 200px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.15) transparent;
+            top: -50px;
+            right: 100px;
+        }
+
+        .triangle-2 {
+            border-width: 0 150px 260px 150px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.1) transparent;
+            bottom: -100px;
+            left: 50px;
+        }
+
+        /* Grid pattern */
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(126, 200, 227, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(126, 200, 227, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Logo */
+        .logo {
+            margin-bottom: 40px;
+        }
+
+        .logo img {
+            height: 100px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-gm {
+            font-size: 60px;
+            font-weight: 800;
+            color: white;
+            position: relative;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 60px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .badge {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .main-number {
+            font-size: 200px;
+            font-weight: 800;
+            background: linear-gradient(180deg, #ffffff 0%, #7ec8e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .main-text {
+            font-size: 42px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        .highlight {
+            color: #7ec8e3;
+            font-weight: 600;
+        }
+
+        .tagline {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.9;
+            max-width: 700px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        .sectors {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sector {
+            background: rgba(126, 200, 227, 0.2);
+            padding: 12px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid rgba(126, 200, 227, 0.4);
+            color: #7ec8e3;
+        }
+
+        .footer-area {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .company-name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        .website {
+            font-size: 14px;
+            opacity: 0.6;
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="grid-pattern"></div>
+        <div class="triangle-deco triangle-1"></div>
+        <div class="triangle-deco triangle-2"></div>
+
+        <div class="content">
+            <div class="logo">
+                <div class="logo-gm">GM</div>
+            </div>
+
+            <div class="badge">Depuis 1952</div>
+
+            <div class="main-number">70<span style="font-size: 100px;">+</span></div>
+            <div class="main-text">Ans d'<span class="highlight">Expertise</span></div>
+
+            <p class="tagline">
+                Des produits leaders pour l'analyse de gaz<br>
+                et la mesure dimensionnelle de precision
+            </p>
+
+            <div class="sectors">
+                <div class="sector">Aeronautique</div>
+                <div class="sector">Automobile</div>
+                <div class="sector">Pharmaceutique</div>
+                <div class="sector">Agroalimentaire</div>
+                <div class="sector">Energie</div>
+            </div>
+        </div>
+
+        <div class="footer-area">
+            <div class="company-name">GRUTER ET MARCHAND</div>
+            <div class="website">gruter-et-marchand.com</div>
+        </div>
+    </div>
+</body>
+</html>

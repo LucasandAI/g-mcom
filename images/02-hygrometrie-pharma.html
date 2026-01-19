@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hygrometrie Pharmaceutique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Blue header bar */
+        .header-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d1b4a 100%);
+        }
+
+        /* Triangle decoration */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 120px 200px 120px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.2) transparent;
+            top: 0;
+            right: 80px;
+        }
+
+        /* Droplet decoration */
+        .droplet {
+            position: absolute;
+            width: 80px;
+            height: 110px;
+            background: linear-gradient(180deg, rgba(126, 200, 227, 0.3) 0%, rgba(126, 200, 227, 0.1) 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            border: 2px solid rgba(126, 200, 227, 0.4);
+        }
+
+        .droplet-1 { bottom: 15%; right: 8%; }
+        .droplet-2 { bottom: 25%; right: 18%; width: 50px; height: 70px; }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .badge {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo-small {
+            text-align: right;
+        }
+
+        .logo-gm {
+            font-size: 32px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 30px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 80px;
+            color: #1a2b6d;
+        }
+
+        .icon-area {
+            margin-bottom: 30px;
+        }
+
+        .humidity-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #7ec8e3 0%, #5ba3c0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 0 20px 60px rgba(126, 200, 227, 0.4);
+        }
+
+        .title {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .title .highlight {
+            color: #7ec8e3;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            color: #4a5568;
+            margin-bottom: 50px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: #f8fafc;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            border-left: 4px solid #7ec8e3;
+        }
+
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a2b6d;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .features {
+            display: flex;
+            gap: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 16px;
+            color: #1a2b6d;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: #7ec8e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a2b6d;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .company-name {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a2b6d;
+        }
+
+        .cta {
+            background: #1a2b6d;
+            color: white;
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="header-bar"></div>
+        <div class="triangle-deco"></div>
+        <div class="droplet droplet-1"></div>
+        <div class="droplet droplet-2"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="badge">Industrie Pharmaceutique</div>
+                <div class="logo-small">
+                    <div class="logo-gm">GM</div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="icon-area">
+                    <div class="humidity-icon">💧</div>
+                </div>
+
+                <h1 class="title">
+                    <span class="highlight">Hygrometrie</span><br>
+                    de Precision
+                </h1>
+
+                <p class="subtitle">
+                    Securisez vos process pharmaceutiques<br>
+                    avec une mesure d'humidite fiable
+                </p>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">ppb</div>
+                        <div class="metric-label">Sensibilite</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">%HR</div>
+                        <div class="metric-label">Plage de mesure</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">COFRAC</div>
+                        <div class="metric-label">Tracabilite</div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Conformite BPF/GMP</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Mesure continue</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">✓</div>
+                        <span>Gaz medicaux</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="company-name">GRUTER ET MARCHAND</div>
+                <div class="cta">Contactez nos experts</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

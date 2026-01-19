@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calibration COFRAC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: #ffffff;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Blue header */
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 220px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d1b4a 100%);
+        }
+
+        /* Triangle decoration */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 150px 260px 150px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.15) transparent;
+            top: -40px;
+            right: 80px;
+        }
+
+        /* Certificate pattern */
+        .cert-pattern {
+            position: absolute;
+            top: 220px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L93.3 25v50L50 100 6.7 75V25z' fill='none' stroke='%231a2b6d' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+        }
+
+        /* Stamp effect */
+        .stamp {
+            position: absolute;
+            top: 100px;
+            right: 60px;
+            width: 140px;
+            height: 140px;
+            border: 4px solid rgba(126, 200, 227, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-15deg);
+        }
+
+        .stamp-inner {
+            width: 115px;
+            height: 115px;
+            border: 2px solid rgba(126, 200, 227, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .stamp-text {
+            color: rgba(126, 200, 227, 0.6);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .stamp-logo {
+            font-size: 28px;
+            color: rgba(126, 200, 227, 0.6);
+            font-weight: 800;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .service-badge {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-gm {
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 28px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 100px;
+            color: #1a2b6d;
+        }
+
+        .cofrac-logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .cofrac-badge {
+            background: #1a2b6d;
+            color: white;
+            padding: 15px 30px;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .accreditation-number {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        .title {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .title .highlight {
+            color: #7ec8e3;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            color: #64748b;
+            margin-bottom: 50px;
+        }
+
+        .guarantees {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .guarantee {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-top: 4px solid #7ec8e3;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .guarantee-icon {
+            width: 60px;
+            height: 60px;
+            background: #7ec8e3;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .guarantee-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #1a2b6d;
+        }
+
+        .guarantee-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .services {
+            display: flex;
+            gap: 25px;
+        }
+
+        .service {
+            flex: 1;
+            background: #1a2b6d;
+            padding: 25px;
+            color: white;
+        }
+
+        .service-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #7ec8e3;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: #7ec8e3;
+            font-weight: bold;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .company-name {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #1a2b6d;
+        }
+
+        .cta {
+            background: #1a2b6d;
+            color: white;
+            padding: 18px 35px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .iso-badge {
+            position: absolute;
+            bottom: 50px;
+            right: 180px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a2b6d;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="header-bg"></div>
+        <div class="triangle-deco"></div>
+        <div class="cert-pattern"></div>
+
+        <div class="stamp">
+            <div class="stamp-inner">
+                <div class="stamp-text">ACCREDITE</div>
+                <div class="stamp-logo">✓</div>
+                <div class="stamp-text">COFRAC</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="header">
+                <div class="service-badge">
+                    <span>📋</span>
+                    <span>Services</span>
+                </div>
+                <div class="logo-gm">GM</div>
+            </div>
+
+            <div class="main-content">
+                <div class="cofrac-logo">
+                    <div class="cofrac-badge">COFRAC</div>
+                    <div class="accreditation-number">Laboratoire accredite</div>
+                </div>
+
+                <h1 class="title">
+                    <span class="highlight">Calibration</span><br>
+                    Accreditee
+                </h1>
+
+                <p class="subtitle">
+                    La garantie d'une mesure fiable et tracable
+                </p>
+
+                <div class="guarantees">
+                    <div class="guarantee">
+                        <div class="guarantee-icon">🌍</div>
+                        <div class="guarantee-title">Tracabilite</div>
+                        <div class="guarantee-desc">Raccordement aux etalons nationaux (LNE)</div>
+                    </div>
+                    <div class="guarantee">
+                        <div class="guarantee-icon">📊</div>
+                        <div class="guarantee-title">Incertitudes</div>
+                        <div class="guarantee-desc">Certificats avec budgets d'incertitude detailles</div>
+                    </div>
+                    <div class="guarantee">
+                        <div class="guarantee-icon">📜</div>
+                        <div class="guarantee-title">ISO 17025</div>
+                        <div class="guarantee-desc">Conformite aux exigences normatives</div>
+                    </div>
+                </div>
+
+                <div class="services">
+                    <div class="service">
+                        <div class="service-title">Analyse de Gaz</div>
+                        <ul class="service-list">
+                            <li>Hygrometres</li>
+                            <li>Miroirs a condensation</li>
+                            <li>Analyseurs d'oxygene</li>
+                            <li>Generateurs d'humidite</li>
+                        </ul>
+                    </div>
+                    <div class="service">
+                        <div class="service-title">Interventions</div>
+                        <ul class="service-list">
+                            <li>En laboratoire</li>
+                            <li>Sur site client</li>
+                            <li>Contrats de maintenance</li>
+                            <li>Delais optimises</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="company-name">GRUTER ET MARCHAND</div>
+                <div class="cta">Demande de calibration</div>
+            </div>
+
+            <div class="iso-badge">ISO 17025</div>
+        </div>
+    </div>
+</body>
+</html>

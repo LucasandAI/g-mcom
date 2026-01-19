@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hydrogene Vert - Energie du Futur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d4a2d 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Triangle decoration */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 180px 300px 180px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.1) transparent;
+            top: -80px;
+            right: 80px;
+        }
+
+        /* H2 bubble effect */
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(76, 175, 80, 0.3), transparent);
+            border-radius: 50%;
+        }
+
+        .bubble-1 { width: 80px; height: 80px; bottom: 25%; left: 10%; }
+        .bubble-2 { width: 50px; height: 50px; bottom: 35%; left: 20%; }
+        .bubble-3 { width: 40px; height: 40px; top: 30%; right: 15%; }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .trend-badge {
+            background: #4caf50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-gm {
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 28px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .h2-symbol {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 30px;
+        }
+
+        .h2-main {
+            font-size: 180px;
+            font-weight: 800;
+            background: linear-gradient(180deg, #4caf50 0%, #7ec8e3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .h2-sub {
+            font-size: 90px;
+            font-weight: 800;
+            color: #4caf50;
+            margin-left: -10px;
+        }
+
+        .title {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 50px;
+        }
+
+        .stats-row {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .stat-box {
+            background: rgba(76, 175, 80, 0.2);
+            border: 1px solid rgba(76, 175, 80, 0.4);
+            padding: 25px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 42px;
+            font-weight: 800;
+            color: #4caf50;
+        }
+
+        .stat-unit {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            opacity: 0.7;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .challenges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .challenge {
+            background: rgba(126, 200, 227, 0.1);
+            border: 1px solid rgba(126, 200, 227, 0.2);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .challenge-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .challenge-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #7ec8e3;
+        }
+
+        .challenge-desc {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .cta {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 18px 35px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="triangle-deco"></div>
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="trend-badge">
+                    <span>🌱</span>
+                    <span>Transition Energetique</span>
+                </div>
+                <div class="logo-gm">GM</div>
+            </div>
+
+            <div class="main-content">
+                <div class="h2-symbol">
+                    <span class="h2-main">H</span>
+                    <span class="h2-sub">2</span>
+                </div>
+
+                <h1 class="title">Hydrogene Vert</h1>
+                <p class="subtitle">L'energie du futur se mesure aujourd'hui</p>
+
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-value">6.5<span class="stat-unit">GW</span></div>
+                        <div class="stat-label">Objectif France 2030</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">ppm</div>
+                        <div class="stat-label">Detection impuretes</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value">ISO</div>
+                        <div class="stat-label">Conformite 14687</div>
+                    </div>
+                </div>
+
+                <div class="challenges">
+                    <div class="challenge">
+                        <div class="challenge-icon">🔬</div>
+                        <div class="challenge-title">Purete</div>
+                        <div class="challenge-desc">Detection O2, H2O, CO a l'echelle ppm</div>
+                    </div>
+                    <div class="challenge">
+                        <div class="challenge-icon">🛡️</div>
+                        <div class="challenge-title">Securite</div>
+                        <div class="challenge-desc">Surveillance temps reel des concentrations</div>
+                    </div>
+                    <div class="challenge">
+                        <div class="challenge-icon">✅</div>
+                        <div class="challenge-title">Qualite</div>
+                        <div class="challenge-desc">Garantie conformite normes internationales</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="company-name">GRUTER ET MARCHAND</div>
+                <div class="cta">Solutions de mesure H2</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

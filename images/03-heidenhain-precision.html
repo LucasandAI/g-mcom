@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>HEIDENHAIN - Precision Absolue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(180deg, #0d1b4a 0%, #1a2b6d 50%, #0d1b4a 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Technical grid */
+        .tech-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(126, 200, 227, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(126, 200, 227, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        /* Measurement lines */
+        .measure-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #7ec8e3 50%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .measure-line-1 { top: 20%; left: 0; right: 0; }
+        .measure-line-2 { top: 80%; left: 0; right: 0; }
+
+        /* Triangle decoration */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 150px 260px 150px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.1) transparent;
+            top: -50px;
+            right: 50px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .partner-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .partner-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.6;
+        }
+
+        .partner-name {
+            font-size: 32px;
+            font-weight: 800;
+            color: #7ec8e3;
+            letter-spacing: 4px;
+        }
+
+        .logo-gm {
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 28px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .precision-display {
+            margin-bottom: 40px;
+        }
+
+        .precision-value {
+            font-size: 160px;
+            font-weight: 800;
+            color: #7ec8e3;
+            line-height: 1;
+            text-shadow: 0 0 100px rgba(126, 200, 227, 0.5);
+        }
+
+        .precision-unit {
+            font-size: 42px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            margin-top: -10px;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .title .highlight {
+            color: #7ec8e3;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            opacity: 0.7;
+            margin-bottom: 50px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .product-card {
+            background: rgba(126, 200, 227, 0.1);
+            border: 1px solid rgba(126, 200, 227, 0.3);
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .product-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .product-name {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .distributor-badge {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 15px 30px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="tech-grid"></div>
+        <div class="measure-line measure-line-1"></div>
+        <div class="measure-line measure-line-2"></div>
+        <div class="triangle-deco"></div>
+
+        <div class="content">
+            <div class="header">
+                <div class="partner-badge">
+                    <div>
+                        <div class="partner-label">Partenaire Officiel</div>
+                        <div class="partner-name">HEIDENHAIN</div>
+                    </div>
+                </div>
+                <div class="logo-gm">GM</div>
+            </div>
+
+            <div class="main-content">
+                <div class="precision-display">
+                    <div class="precision-value">nm</div>
+                    <div class="precision-unit">precision nanometrique</div>
+                </div>
+
+                <h1 class="title">Mesure <span class="highlight">Dimensionnelle</span></h1>
+                <p class="subtitle">La reference mondiale en mesure lineaire et angulaire</p>
+
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">📏</div>
+                        <div class="product-name">Mesure<br>Lineaire</div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🔄</div>
+                        <div class="product-name">Codeurs<br>Rotatifs</div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">🎯</div>
+                        <div class="product-name">Palpeurs<br>de Mesure</div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-icon">⚙️</div>
+                        <div class="product-name">Solutions<br>Retrofit</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="distributor-badge">Distributeur Officiel France</div>
+                <div class="company-name">GRUTER ET MARCHAND</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

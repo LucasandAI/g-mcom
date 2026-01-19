@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Permeabilite Packaging</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f4f8;
+            padding: 20px;
+        }
+
+        .linkedin-post {
+            width: 1080px;
+            height: 1080px;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d3d2d 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Triangle decoration */
+        .triangle-deco {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 180px 300px 180px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.08) transparent;
+            top: -80px;
+            right: 60px;
+        }
+
+        /* Barrier visualization */
+        .barrier {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            bottom: 25%;
+            width: 3px;
+            background: linear-gradient(180deg,
+                transparent 0%,
+                rgba(126, 200, 227, 0.3) 20%,
+                rgba(126, 200, 227, 0.5) 50%,
+                rgba(126, 200, 227, 0.3) 80%,
+                transparent 100%);
+            transform: translateX(-50%);
+        }
+
+        /* Molecule labels */
+        .molecule-label {
+            position: absolute;
+            font-size: 20px;
+            font-weight: 800;
+            opacity: 0.15;
+        }
+
+        .o2-label { top: 35%; left: 12%; color: #4caf50; }
+        .h2o-label { bottom: 35%; right: 12%; color: #7ec8e3; }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            color: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sector-badge {
+            background: #4caf50;
+            color: white;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-gm {
+            font-size: 28px;
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-gm::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 28px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .icon-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .test-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .otr-icon { background: #4caf50; color: white; }
+        .wvtr-icon { background: #7ec8e3; color: #1a2b6d; }
+
+        .title {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .title .highlight { color: #7ec8e3; }
+
+        .subtitle {
+            font-size: 22px;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 50px;
+        }
+
+        .metrics-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .metric-box {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 25px;
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .metric-tag {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .otr-tag { background: rgba(76,175,80,0.3); color: #4caf50; }
+        .wvtr-tag { background: rgba(126,200,227,0.3); color: #7ec8e3; }
+
+        .metric-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #7ec8e3;
+            margin-bottom: 8px;
+        }
+
+        .metric-desc {
+            font-size: 13px;
+            opacity: 0.7;
+            line-height: 1.4;
+        }
+
+        .impacts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .impact {
+            text-align: center;
+            padding: 20px 10px;
+            background: rgba(126, 200, 227, 0.1);
+            border: 1px solid rgba(126, 200, 227, 0.2);
+        }
+
+        .impact-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .impact-text {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.3;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .cta {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 18px 35px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-post">
+        <div class="triangle-deco"></div>
+        <div class="barrier"></div>
+        <div class="molecule-label o2-label">O₂ →</div>
+        <div class="molecule-label h2o-label">← H₂O</div>
+
+        <div class="content">
+            <div class="header">
+                <div class="sector-badge">
+                    <span>🥗</span>
+                    <span>Agroalimentaire</span>
+                </div>
+                <div class="logo-gm">GM</div>
+            </div>
+
+            <div class="main-content">
+                <div class="icon-row">
+                    <div class="test-icon otr-icon">O₂</div>
+                    <div class="test-icon wvtr-icon">H₂O</div>
+                </div>
+
+                <h1 class="title">
+                    <span class="highlight">Permeabilite</span><br>
+                    Packaging
+                </h1>
+
+                <p class="subtitle">
+                    La cle de la conservation alimentaire
+                </p>
+
+                <div class="metrics-comparison">
+                    <div class="metric-box">
+                        <div class="metric-header">
+                            <span class="metric-tag otr-tag">OTR</span>
+                            <span class="metric-title">Oxygen Transmission Rate</span>
+                        </div>
+                        <div class="metric-value">0.001 - 10 000</div>
+                        <div class="metric-desc">cc/m²/jour<br>Oxydation, developpement bacterien</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-header">
+                            <span class="metric-tag wvtr-tag">WVTR</span>
+                            <span class="metric-title">Water Vapor Transmission Rate</span>
+                        </div>
+                        <div class="metric-value">Haute precision</div>
+                        <div class="metric-desc">g/m²/jour<br>Moisissures, perte de texture</div>
+                    </div>
+                </div>
+
+                <div class="impacts">
+                    <div class="impact">
+                        <div class="impact-icon">📅</div>
+                        <div class="impact-text">Garantir<br>la DLC</div>
+                    </div>
+                    <div class="impact">
+                        <div class="impact-icon">🗑️</div>
+                        <div class="impact-text">Reduire le<br>gaspillage</div>
+                    </div>
+                    <div class="impact">
+                        <div class="impact-icon">💰</div>
+                        <div class="impact-text">Optimiser<br>les couts</div>
+                    </div>
+                    <div class="impact">
+                        <div class="impact-icon">✅</div>
+                        <div class="impact-text">Conformite<br>reglementaire</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="company-name">GRUTER ET MARCHAND</div>
+                <div class="cta">Test de permeabilite</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

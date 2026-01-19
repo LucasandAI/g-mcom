@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan de Communication LinkedIn - Gruter & Marchand</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1a2b6d;
+            background: white;
+        }
+
+        @media print {
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-break { page-break-before: always; }
+            .no-break { page-break-inside: avoid; }
+        }
+
+        .cover {
+            height: 100vh;
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d1b4a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 300px 500px 300px;
+            border-color: transparent transparent rgba(126, 200, 227, 0.1) transparent;
+            top: -100px;
+            right: 50px;
+        }
+
+        .cover-logo {
+            font-size: 80px;
+            font-weight: 800;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .cover-logo::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 80px solid #7ec8e3;
+            z-index: -1;
+        }
+
+        .cover-company {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 50px;
+        }
+
+        .cover-title {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .cover-subtitle {
+            font-size: 24px;
+            color: #7ec8e3;
+            font-weight: 600;
+        }
+
+        .cover-badge {
+            position: absolute;
+            bottom: 80px;
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 15px 40px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a2b6d;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 4px solid #7ec8e3;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a2b6d;
+            margin: 40px 0 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #7ec8e3;
+            margin: 25px 0 15px;
+        }
+
+        p { margin-bottom: 15px; }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li { margin-bottom: 8px; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #1a2b6d;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) { background: #f8fafc; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-top: 4px solid #7ec8e3;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a2b6d;
+        }
+
+        .stat-card .label {
+            font-size: 12px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .pillar {
+            background: #1a2b6d;
+            color: white;
+            padding: 25px;
+        }
+
+        .pillar h4 {
+            color: #7ec8e3;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .pillar p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .pillar ul {
+            margin-left: 20px;
+            font-size: 13px;
+        }
+
+        .pillar li {
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .calendar-week {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+        }
+
+        .calendar-week h4 {
+            background: #1a2b6d;
+            color: white;
+            padding: 10px 15px;
+            margin: -20px -20px 20px;
+            font-size: 14px;
+        }
+
+        .calendar-post {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #7ec8e3;
+            background: white;
+        }
+
+        .calendar-post:last-child { margin-bottom: 0; }
+
+        .calendar-post .day {
+            font-weight: 700;
+            color: #7ec8e3;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calendar-post .theme {
+            font-size: 14px;
+            color: #1a2b6d;
+            margin-top: 5px;
+        }
+
+        .post-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            margin: 30px 0;
+            page-break-inside: avoid;
+        }
+
+        .post-header {
+            background: #1a2b6d;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .post-avatar {
+            width: 50px;
+            height: 50px;
+            background: #7ec8e3;
+            color: #1a2b6d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        .post-meta .company-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .post-meta .post-date {
+            font-size: 12px;
+            opacity: 0.7;
+        }
+
+        .post-type {
+            margin-left: auto;
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 6px 15px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .post-content {
+            padding: 25px;
+            font-size: 14px;
+            line-height: 1.7;
+            white-space: pre-line;
+        }
+
+        .post-content strong {
+            color: #1a2b6d;
+        }
+
+        .hashtags {
+            display: block;
+            margin-top: 20px;
+            color: #7ec8e3;
+            font-size: 13px;
+        }
+
+        .post-visual {
+            background: linear-gradient(135deg, #1a2b6d 0%, #0d1b4a 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .post-visual-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .post-visual-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #7ec8e3;
+        }
+
+        .tips-box {
+            background: #7ec8e3;
+            color: #1a2b6d;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .tips-box h3 {
+            color: #1a2b6d;
+            margin-top: 0;
+        }
+
+        .section-divider {
+            text-align: center;
+            padding: 40px 0;
+            color: #7ec8e3;
+            font-size: 24px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #1a2b6d;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+    <div class="cover-logo">GM</div>
+    <div class="cover-company">GRUTER ET MARCHAND</div>
+    <div class="cover-title">Plan de Communication</div>
+    <div class="cover-subtitle">LinkedIn</div>
+    <div class="cover-badge">Depuis 1952</div>
+</div>
+
+<!-- PROFILE & STRATEGY -->
+<div class="container page-break">
+    <h1>Profil de l'Entreprise</h1>
+
+    <div class="stats-grid">
+        <div class="stat-card no-break">
+            <div class="number">70+</div>
+            <div class="label">Annees d'Experience</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">4</div>
+            <div class="label">Agences Regionales</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">2</div>
+            <div class="label">Poles d'Expertise</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">5+</div>
+            <div class="label">Secteurs Industriels</div>
+        </div>
+    </div>
+
+    <h2>Domaines d'Expertise</h2>
+    <table>
+        <tr>
+            <th>Analyse de Gaz</th>
+            <th>Mesure Dimensionnelle</th>
+        </tr>
+        <tr>
+            <td>Hygrometrie (ppb-ppm-%HR)</td>
+            <td>Systemes HEIDENHAIN</td>
+        </tr>
+        <tr>
+            <td>Analyse d'oxygene</td>
+            <td>Machines STARRETT</td>
+        </tr>
+        <tr>
+            <td>Permeabilite (OTR-WTR)</td>
+            <td>Equipements DIAVITE</td>
+        </tr>
+        <tr>
+            <td>Multi-gaz (CO2, CO, CH4, H2)</td>
+            <td>Machines ELETTRORAVA</td>
+        </tr>
+        <tr>
+            <td>Biogaz & Hydrogene</td>
+            <td>Solutions Retrofit</td>
+        </tr>
+    </table>
+
+    <h1 class="page-break">Strategie de Communication</h1>
+
+    <h2>Objectifs</h2>
+    <ul>
+        <li><strong>Notoriete :</strong> Renforcer la visibilite de Gruter & Marchand comme expert reconnu</li>
+        <li><strong>Engagement :</strong> Creer une communaute autour de l'analyse industrielle</li>
+        <li><strong>Generation de leads :</strong> Attirer des prospects qualifies dans les secteurs cibles</li>
+        <li><strong>Positionnement :</strong> Valoriser les 70+ ans d'expertise et d'innovation</li>
+    </ul>
+
+    <h2>Cibles LinkedIn</h2>
+    <table>
+        <tr>
+            <th>Secteur</th>
+            <th>Fonctions Cibles</th>
+            <th>Themes Pertinents</th>
+        </tr>
+        <tr>
+            <td>Aeronautique</td>
+            <td>Ingenieurs Qualite, Responsables Production</td>
+            <td>Precision, Conformite, Tracabilite</td>
+        </tr>
+        <tr>
+            <td>Automobile</td>
+            <td>Directeurs Techniques, Responsables Metrologie</td>
+            <td>Productivite, Controle Process</td>
+        </tr>
+        <tr>
+            <td>Pharmaceutique</td>
+            <td>Responsables AQ, Ingenieurs Process</td>
+            <td>Reglementation, Calibration COFRAC</td>
+        </tr>
+        <tr>
+            <td>Agroalimentaire</td>
+            <td>Responsables Packaging, Qualite</td>
+            <td>Conservation, Permeabilite</td>
+        </tr>
+        <tr>
+            <td>Energie</td>
+            <td>Ingenieurs Process, Responsables R&D</td>
+            <td>Biogaz, Hydrogene, Transition</td>
+        </tr>
+    </table>
+
+    <h2>Frequence de Publication</h2>
+    <p><strong>1 a 2 posts par semaine</strong> - Publication strategique pour maintenir l'engagement sans saturer l'audience.</p>
+    <ul>
+        <li><strong>Mardi :</strong> Post educatif ou technique (meilleur engagement B2B)</li>
+        <li><strong>Jeudi :</strong> Post institutionnel ou actualite (optionnel)</li>
+    </ul>
+</div>
+
+<!-- CONTENT PILLARS -->
+<div class="container page-break">
+    <h1>Piliers de Contenu</h1>
+
+    <div class="pillars-grid">
+        <div class="pillar no-break">
+            <h4>1. Heritage & Expertise</h4>
+            <p>Valoriser les 70+ ans d'experience</p>
+            <ul>
+                <li>Histoire de l'entreprise</li>
+                <li>Jalons technologiques</li>
+                <li>Temoignages equipe</li>
+            </ul>
+        </div>
+        <div class="pillar no-break">
+            <h4>2. Solutions Techniques</h4>
+            <p>Presenter les produits en contexte</p>
+            <ul>
+                <li>Applications industrielles</li>
+                <li>Etudes de cas</li>
+                <li>Innovations produits</li>
+            </ul>
+        </div>
+        <div class="pillar no-break">
+            <h4>3. Tendances Industrie</h4>
+            <p>Positionnement thought leader</p>
+            <ul>
+                <li>Transition energetique</li>
+                <li>Industrie 4.0</li>
+                <li>Decarbonation</li>
+            </ul>
+        </div>
+        <div class="pillar no-break">
+            <h4>4. Partenariats</h4>
+            <p>Mettre en avant les marques</p>
+            <ul>
+                <li>HEIDENHAIN</li>
+                <li>STARRETT</li>
+                <li>ELETTRORAVA</li>
+            </ul>
+        </div>
+    </div>
+
+    <h1>Calendrier Editorial - 4 Semaines</h1>
+
+    <div class="calendar-grid">
+        <div class="calendar-week no-break">
+            <h4>Semaine 1</h4>
+            <div class="calendar-post">
+                <div class="day">Mardi</div>
+                <div class="theme">Heritage : 70 ans d'expertise au service de l'industrie</div>
+            </div>
+            <div class="calendar-post">
+                <div class="day">Jeudi</div>
+                <div class="theme">Technique : L'importance de l'hygrometrie dans le pharmaceutique</div>
+            </div>
+        </div>
+        <div class="calendar-week no-break">
+            <h4>Semaine 2</h4>
+            <div class="calendar-post">
+                <div class="day">Mardi</div>
+                <div class="theme">Partenariat : Focus HEIDENHAIN - precision absolue</div>
+            </div>
+            <div class="calendar-post">
+                <div class="day">Jeudi</div>
+                <div class="theme">Tendance : L'hydrogene, energie du futur</div>
+            </div>
+        </div>
+        <div class="calendar-week no-break">
+            <h4>Semaine 3</h4>
+            <div class="calendar-post">
+                <div class="day">Mardi</div>
+                <div class="theme">Application : Controle qualite en aeronautique</div>
+            </div>
+            <div class="calendar-post">
+                <div class="day">Jeudi</div>
+                <div class="theme">Equipe : Nos experts a votre service</div>
+            </div>
+        </div>
+        <div class="calendar-week no-break">
+            <h4>Semaine 4</h4>
+            <div class="calendar-post">
+                <div class="day">Mardi</div>
+                <div class="theme">Solution : Permeabilite packaging alimentaire</div>
+            </div>
+            <div class="calendar-post">
+                <div class="day">Jeudi</div>
+                <div class="theme">Services : Calibration COFRAC - la garantie qualite</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- KPIs -->
+<div class="container page-break">
+    <h1>Indicateurs de Performance (KPIs)</h1>
+    <table>
+        <tr>
+            <th>Metrique</th>
+            <th>Objectif Mois 1</th>
+            <th>Objectif Mois 3</th>
+        </tr>
+        <tr>
+            <td>Impressions par post</td>
+            <td>500+</td>
+            <td>1 500+</td>
+        </tr>
+        <tr>
+            <td>Taux d'engagement</td>
+            <td>2%</td>
+            <td>4%</td>
+        </tr>
+        <tr>
+            <td>Nouveaux abonnes/mois</td>
+            <td>+50</td>
+            <td>+150</td>
+        </tr>
+        <tr>
+            <td>Demandes de contact</td>
+            <td>5</td>
+            <td>15</td>
+        </tr>
+    </table>
+
+    <div class="tips-box no-break">
+        <h3>Conseils de Publication</h3>
+        <ul>
+            <li><strong>Horaire optimal :</strong> Mardi/Jeudi entre 8h-9h ou 17h-18h</li>
+            <li><strong>Image :</strong> Format 1080x1080px (carre) pour LinkedIn</li>
+            <li><strong>Hashtags :</strong> 5-10 hashtags pertinents maximum</li>
+            <li><strong>Longueur :</strong> 1300-2000 caracteres pour un engagement optimal</li>
+            <li><strong>CTA :</strong> Toujours inclure un appel a l'action clair</li>
+        </ul>
+    </div>
+</div>
+
+<!-- POSTS SEMAINE 1 -->
+<div class="container page-break">
+    <h1>Posts LinkedIn - Semaine 1</h1>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Mardi - Semaine 1</div>
+            </div>
+            <span class="post-type">Heritage</span>
+        </div>
+        <div class="post-content"><strong>70 ans d'expertise au service de l'industrie francaise</strong>
+
+En 1952, Gruter & Marchand voyait le jour avec une mission claire : accompagner l'industrie francaise dans sa quete de precision et de qualite.
+
+Aujourd'hui, nous sommes fiers de poursuivre cette mission aupres de secteurs exigeants :
+- Aeronautique
+- Automobile
+- Pharmaceutique
+- Agroalimentaire
+- Energie
+
+Depuis notre siege a Nanterre et nos 4 agences regionales, nous restons proches de nos clients pour leur apporter des solutions sur mesure en :
+
+<strong>Analyse de gaz</strong> - Hygrometrie, oxygene, permeabilite, multi-gaz
+<strong>Mesure dimensionnelle</strong> - HEIDENHAIN, STARRETT, controle de surface
+
+70 ans plus tard, notre engagement reste le meme : vous accompagner vers l'excellence industrielle.
+
+<span class="hashtags">#Industrie #QualiteFrance #Metrologie #AnalyseIndustrielle #GruterMarchand #MadeInFrance #70ans</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">01-heritage-70ans.html</div>
+        </div>
+    </div>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Jeudi - Semaine 1</div>
+            </div>
+            <span class="post-type">Technique</span>
+        </div>
+        <div class="post-content"><strong>Industrie pharmaceutique : pourquoi l'hygrometrie est critique pour vos process ?</strong>
+
+Dans l'industrie pharmaceutique, un ecart de quelques ppm d'humidite peut compromettre :
+- La stabilite des principes actifs
+- La qualite des comprimes et gelules
+- La conformite reglementaire (BPF/GMP)
+
+Nos solutions d'hygrometrie permettent de mesurer avec precision :
+- De quelques ppb a plusieurs %HR
+- En continu ou en controle ponctuel
+- Avec tracabilite COFRAC
+
+<strong>Le saviez-vous ?</strong>
+L'hygroscopicite de certains excipients peut varier de 300% selon le taux d'humidite ambiant, impactant directement la qualite finale du medicament.
+
+Vous souhaitez securiser vos process pharmaceutiques ?
+Nos experts sont a votre disposition.
+
+<span class="hashtags">#Pharma #Hygrometrie #QualitePharma #BPF #GMP #ProcessControl #GruterMarchand #AnalyseGaz</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">02-hygrometrie-pharma.html</div>
+        </div>
+    </div>
+</div>
+
+<!-- POSTS SEMAINE 2 -->
+<div class="container page-break">
+    <h1>Posts LinkedIn - Semaine 2</h1>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Mardi - Semaine 2</div>
+            </div>
+            <span class="post-type">Partenariat</span>
+        </div>
+        <div class="post-content"><strong>HEIDENHAIN x Gruter & Marchand : la precision au service de votre production</strong>
+
+Depuis de nombreuses annees, nous sommes distributeur officiel HEIDENHAIN en France.
+
+Pourquoi ce partenariat strategique ?
+
+HEIDENHAIN est la reference mondiale en mesure lineaire et angulaire :
+- Precision nanometrique
+- Fiabilite en environnement industriel
+- Innovation continue depuis 1889
+
+Nos equipes vous accompagnent sur :
+
+<strong>Systemes de mesure lineaire</strong>
+Pour machines-outils, rectifieuses, centres d'usinage
+
+<strong>Codeurs rotatifs</strong>
+Positionnement angulaire haute precision
+
+<strong>Palpeurs de mesure</strong>
+Controle en cours de fabrication
+
+<strong>Solutions retrofit</strong>
+Modernisation de vos equipements existants
+
+Un projet de metrologie dimensionnelle ?
+Contactez nos specialistes HEIDENHAIN.
+
+<span class="hashtags">#HEIDENHAIN #Metrologie #Precision #MachinesOutils #Usinage #Industrie40 #GruterMarchand #MesureDimensionnelle</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">03-heidenhain-precision.html</div>
+        </div>
+    </div>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Jeudi - Semaine 2</div>
+            </div>
+            <span class="post-type">Tendance</span>
+        </div>
+        <div class="post-content"><strong>Hydrogene vert : la revolution energetique est en marche</strong>
+
+L'hydrogene sera un pilier de la transition energetique.
+La France vise 6,5 GW de capacite de production d'ici 2030.
+
+Mais produire de l'hydrogene vert, c'est aussi le mesurer avec precision.
+
+<strong>Les defis analytiques de la filiere H2 :</strong>
+
+Purete - Detecter les impuretes a l'echelle du ppm (O2, H2O, CO, CO2)
+Securite - Surveiller les fuites et concentrations en temps reel
+Qualite - Garantir la conformite aux normes ISO 14687
+
+<strong>Nos solutions pour la filiere hydrogene :</strong>
+- Analyseurs portables et fixes
+- Mesure de purete haute precision
+- Surveillance continue des process
+
+La transition energetique se construit aujourd'hui.
+Gruter & Marchand accompagne les acteurs de l'hydrogene avec des solutions de mesure adaptees.
+
+<span class="hashtags">#Hydrogene #H2 #TransitionEnergetique #EnergieVerte #Decarbonation #Industrie #GruterMarchand #Innovation</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">04-hydrogene-vert.html</div>
+        </div>
+    </div>
+</div>
+
+<!-- POSTS SEMAINE 3 -->
+<div class="container page-break">
+    <h1>Posts LinkedIn - Semaine 3</h1>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Mardi - Semaine 3</div>
+            </div>
+            <span class="post-type">Application</span>
+        </div>
+        <div class="post-content"><strong>Aeronautique : quand chaque micron compte</strong>
+
+Dans l'industrie aeronautique, la precision n'est pas une option.
+C'est une exigence vitale.
+
+Un ecart de quelques microns sur une piece critique peut compromettre la securite de milliers de passagers.
+
+<strong>Les defis de la metrologie aeronautique :</strong>
+
+Tolerances extremes - Pieces complexes avec tolerances de l'ordre du micron
+Tracabilite totale - Documentation complete pour chaque mesure
+Environnements contraints - Mesures en atelier et sur site
+
+<strong>Nos solutions pour l'aeronautique :</strong>
+
+<strong>Mesure dimensionnelle</strong>
+- Systemes HEIDENHAIN pour machines-outils haute precision
+- Machines de mesure video STARRETT
+- Controle de surface DIAVITE
+
+<strong>Analyse de gaz</strong>
+- Controle d'atmospheres protegees (soudage, traitement thermique)
+- Mesure de permeabilite des composites
+
+Airbus, Safran, Dassault...
+Les leaders de l'aeronautique nous font confiance.
+
+Et vous ?
+
+<span class="hashtags">#Aeronautique #Aerospace #Metrologie #Precision #QualiteAero #Industrie #GruterMarchand #MadeInFrance</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">05-aeronautique.html</div>
+        </div>
+    </div>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Jeudi - Semaine 3</div>
+            </div>
+            <span class="post-type">Equipe</span>
+        </div>
+        <div class="post-content"><strong>Derriere chaque solution, une equipe d'experts</strong>
+
+Chez Gruter & Marchand, nous croyons que la technologie seule ne suffit pas.
+C'est l'expertise humaine qui fait la difference.
+
+<strong>Notre force ?</strong>
+
+<strong>4 agences regionales</strong>
+Pour etre toujours proches de vous, partout en France
+
+<strong>Des specialistes dedies</strong>
+Analyse de gaz ET mesure dimensionnelle - deux expertises, une seule equipe
+
+<strong>Un accompagnement complet</strong>
+Du conseil a l'installation, de la formation a la maintenance
+
+<strong>Ce que nos clients apprecient :</strong>
+
+"Reactivite et competence technique remarquables"
+"Un partenaire qui comprend nos enjeux industriels"
+"Disponibilite et proximite, meme pour les demandes urgentes"
+
+Depuis 1952, notre engagement reste le meme :
+Vous apporter des solutions adaptees avec un service de qualite.
+
+Rencontrons-nous pour parler de vos projets.
+
+<span class="hashtags">#Equipe #ExpertiseIndustrielle #ServiceClient #ProximiteClient #GruterMarchand #B2B #Industrie</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">06-equipe-experts.html</div>
+        </div>
+    </div>
+</div>
+
+<!-- POSTS SEMAINE 4 -->
+<div class="container page-break">
+    <h1>Posts LinkedIn - Semaine 4</h1>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Mardi - Semaine 4</div>
+            </div>
+            <span class="post-type">Solution</span>
+        </div>
+        <div class="post-content"><strong>Packaging alimentaire : la permeabilite, cle de la conservation</strong>
+
+Saviez-vous qu'un emballage alimentaire peut laisser passer de l'oxygene et de l'humidite meme s'il semble parfaitement etanche ?
+
+C'est ce qu'on appelle la permeabilite.
+
+<strong>Pourquoi c'est crucial ?</strong>
+
+Oxygene (OTR) - Oxydation des lipides, perte de vitamines, developpement bacterien
+Humidite (WVTR) - Ramollissement, moisissures, perte de croustillant
+
+<strong>Les enjeux pour l'industrie agroalimentaire :</strong>
+- Garantir la DLC annoncee
+- Reduire le gaspillage alimentaire
+- Optimiser les couts d'emballage
+- Repondre aux exigences reglementaires
+
+<strong>Nos solutions de mesure de permeabilite :</strong>
+
+Mesure OTR (Oxygen Transmission Rate) - De 0.001 a 10 000 cc/m2/jour
+Mesure WVTR (Water Vapor Transmission Rate) - Haute precision pour tous types de films
+Tests sur emballages finis - Barquettes, sachets, bouteilles
+
+Industriels de l'agroalimentaire,
+Optimisez vos emballages avec des donnees fiables.
+
+<span class="hashtags">#Packaging #Agroalimentaire #Permeabilite #QualiteAlimentaire #Conservation #Innovation #GruterMarchand #OTR #WVTR</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">07-packaging-permeabilite.html</div>
+        </div>
+    </div>
+
+    <div class="post-card no-break">
+        <div class="post-header">
+            <div class="post-avatar">G&M</div>
+            <div class="post-meta">
+                <div class="company-name">Gruter & Marchand</div>
+                <div class="post-date">Jeudi - Semaine 4</div>
+            </div>
+            <span class="post-type">Services</span>
+        </div>
+        <div class="post-content"><strong>Calibration COFRAC : la garantie d'une mesure fiable</strong>
+
+Une mesure sans tracabilite n'a aucune valeur.
+
+Dans l'industrie, la confiance dans vos instruments de mesure est fondamentale pour :
+- La qualite de vos produits
+- La conformite reglementaire
+- La satisfaction de vos clients
+
+<strong>Notre laboratoire de calibration accredite COFRAC vous garantit :</strong>
+
+Tracabilite internationale - Raccordement aux etalons nationaux (LNE)
+Incertitudes maitrisees - Certificats detailles avec budgets d'incertitude
+Conformite normative - ISO 17025, exigences sectorielles
+
+<strong>Nos prestations de calibration :</strong>
+
+<strong>Analyse de gaz</strong>
+- Hygrometres et miroirs a condensation
+- Analyseurs d'oxygene
+- Generateurs d'humidite
+
+<strong>Intervention sur site ou en laboratoire</strong>
+Flexibilite selon vos contraintes de production
+
+Vous devez faire calibrer vos instruments ?
+Contactez notre laboratoire COFRAC.
+
+<span class="hashtags">#Calibration #COFRAC #Metrologie #ISO17025 #Tracabilite #QualiteIndustrielle #GruterMarchand #Accreditation</span></div>
+        <div class="post-visual">
+            <div class="post-visual-label">Visuel suggere</div>
+            <div class="post-visual-title">08-cofrac-calibration.html</div>
+        </div>
+    </div>
+</div>
+
+<!-- RECAP -->
+<div class="container page-break">
+    <h1>Recapitulatif du Mois</h1>
+
+    <table>
+        <tr>
+            <th>Semaine</th>
+            <th>Post 1 (Mardi)</th>
+            <th>Post 2 (Jeudi)</th>
+        </tr>
+        <tr>
+            <td>Semaine 1</td>
+            <td>Heritage - 70 ans d'expertise</td>
+            <td>Technique - Hygrometrie pharma</td>
+        </tr>
+        <tr>
+            <td>Semaine 2</td>
+            <td>Partenariat - HEIDENHAIN</td>
+            <td>Tendance - Hydrogene</td>
+        </tr>
+        <tr>
+            <td>Semaine 3</td>
+            <td>Application - Aeronautique</td>
+            <td>Equipe - Nos experts</td>
+        </tr>
+        <tr>
+            <td>Semaine 4</td>
+            <td>Solution - Permeabilite packaging</td>
+            <td>Services - Calibration COFRAC</td>
+        </tr>
+    </table>
+
+    <h2>Equilibre des contenus</h2>
+    <div class="stats-grid">
+        <div class="stat-card no-break">
+            <div class="number">2</div>
+            <div class="label">Posts Heritage/Equipe</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">3</div>
+            <div class="label">Posts Techniques</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">2</div>
+            <div class="label">Posts Partenariats</div>
+        </div>
+        <div class="stat-card no-break">
+            <div class="number">1</div>
+            <div class="label">Post Tendance</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-logo">GM</div>
+        <p><strong>GRUTER ET MARCHAND</strong></p>
+        <p>www.gruter-et-marchand.com</p>
+        <p style="margin-top: 20px; opacity: 0.5;">Plan de Communication LinkedIn</p>
+    </div>
+</div>
+
+</body>
+</html>
